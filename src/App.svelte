@@ -3,16 +3,14 @@
   import Home from './views/Home.svelte';
   import About from './views/About.svelte';
   import Profile from './views/Profile.svelte';
+  import Login from './views/Login.svelte';
+  import Navbar from './components/Navbar.svelte';
 </script>
 
 <div>
     <h1>Routing</h1>
     <Router>
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/profile">Profile</Link>
-        </nav>
+        <Navbar />
         <Route path="/">
             <Home />
         </Route>
@@ -21,6 +19,9 @@
         </Route>
         <Route path="/profile">
             <Profile />
+        </Route>
+        <Route path="/login">
+            <Login />
         </Route>
      </Router>
 </div>
