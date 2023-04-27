@@ -12,6 +12,6 @@
 
 <div>
   {#if $user}
-    <h2>Profile (protected)</h2>
+    <h2>Profile ({$user.displayName})</h2>
   {/if}
 </div>

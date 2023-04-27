@@ -1,10 +1,17 @@
 <script>
-    import { Link } from 'svelte-routing'
+    import { Link, navigate } from 'svelte-routing'
     import { user } from '../stores/User'
+    import { auth } from '../firebase';
 
-    const cerrarSesion = () => {
-        user.setUser(null)
-        navigate('/login', { replace: true })
+    const cerrarSesion = async () => {
+        try {
+            await auth.signOut()
+            user.setUser(null)
+            navigate('/login', { replace: true })
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 </script>
 
